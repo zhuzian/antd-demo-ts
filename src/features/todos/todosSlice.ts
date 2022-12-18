@@ -151,6 +151,8 @@ export const todosLoaded = (todos: Todo[]): IAction<Todo[]> => ({
 export const fetchTodos = () => async (dispatch: AppDispatch) => {
   dispatch(todosLoading())
   const response = await client.get('/fakeApi/todos')
+  console.log(response)
+
   dispatch(todosLoaded(response.todos))
 }
 
